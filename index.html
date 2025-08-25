@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游戏选择</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            margin: 0;
+            padding: 50px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 30px;
+        }
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .game-item {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-decoration: none;
+            color: #333;
+            padding: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: block;
+        }
+        .game-item:hover {
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 10px 18px rgba(0,0,0,0.12);
+        }
+        .game-item svg {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 15px;
+            display: block;
+            margin-inline: auto;
+        }
+        .game-item h2 {
+            margin: 0;
+            font-size: 18px;
+        }
+        @media (prefers-color-scheme: dark) {
+            body { background: #0f1115; color: #e6e6e6; }
+            .game-item { background: #151923; color: #e6e6e6; }
+        }
+    </style>
+</head>
+<body>
+<h1>请选择一个游戏</h1>
+<div class="game-grid">
+    <a class="game-item" href="html/Gomoku.html" aria-label="进入五子棋">
+        <!-- 五子棋图标（SVG 内联） -->
+        <svg viewBox="0 0 100 100" role="img" aria-labelledby="title-gomoku desc-gomoku">
+            <title id="title-gomoku">五子棋图标</title>
+            <desc id="desc-gomoku">棋盘与黑白棋子</desc>
+            <!-- 棋盘背景 -->
+            <rect x="8" y="8" width="84" height="84" rx="8" fill="#f7d8a0" stroke="#c9a46a"/>
+            <!-- 网格线 -->
+            <g stroke="#7c6140" stroke-width="1">
+                <!-- 9x9 简化网格 -->
+                <script type="application/ecmascript"><![CDATA[
+                // 占位：SVG 内不运行脚本，这里只是避免重复书写。下方用静态路径。
+                ]]></script>
+            </g>
+            <!-- 静态网格线（每10单位，从15到85） -->
+            <g stroke="#7c6140" stroke-width="1" opacity="0.85">
+                <!-- 竖线 -->
+                <path d="M20 12 L20 88 M30 12 L30 88 M40 12 L40 88 M50 12 L50 88 M60 12 L60 88 M70 12 L70 88 M80 12 L80 88"/>
+                <!-- 横线 -->
+                <path d="M12 20 L88 20 M12 30 L88 30 M12 40 L88 40 M12 50 L88 50 M12 60 L88 60 M12 70 L88 70 M12 80 L88 80"/>
+            </g>
+            <!-- 星位 -->
+            <g fill="#7c6140">
+                <circle cx="50" cy="50" r="1.8"/>
+            </g>
+            <!-- 棋子示意（黑白各若干） -->
+            <g stroke="#333" stroke-width="1">
+                <circle cx="40" cy="40" r="5.5" fill="#111"/>
+                <circle cx="50" cy="40" r="5.5" fill="#fff"/>
+                <circle cx="60" cy="50" r="5.5" fill="#111"/>
+                <circle cx="30" cy="60" r="5.5" fill="#fff"/>
+                <circle cx="40" cy="60" r="5.5" fill="#111"/>
+            </g>
+        </svg>
+        <h2>五子棋</h2>
+    </a>
+
+    <a class="game-item" href="html/Sudoku.html" aria-label="进入数独">
+        <!-- 数独图标（SVG 内联） -->
+        <svg viewBox="0 0 100 100" role="img" aria-labelledby="title-sudoku desc-sudoku">
+            <title id="title-sudoku">数独图标</title>
+            <desc id="desc-sudoku">9x9 网格与示例数字</desc>
+            <!-- 背板 -->
+            <rect x="8" y="8" width="84" height="84" rx="8" fill="#f4f6fb" stroke="#cfd6e6"/>
+            <!-- 细网格线 -->
+            <g stroke="#c8d0e0" stroke-width="1">
+                <!-- 竖线 -->
+                <path d="M19 8 L19 92 M29 8 L29 92 M39 8 L39 92 M61 8 L61 92 M71 8 L71 92 M81 8 L81 92"/>
+                <!-- 横线 -->
+                <path d="M8 19 L92 19 M8 29 L92 29 M8 39 L92 39 M8 61 L92 61 M8 71 L92 71 M8 81 L92 81"/>
+            </g>
+            <!-- 粗分块线（3x3） -->
+            <g stroke="#7a8bb5" stroke-width="2.5">
+                <path d="M8 38 L92 38 M8 62 L92 62 M38 8 L38 92 M62 8 L62 92"/>
+            </g>
+            <!-- 外边框重描 -->
+            <rect x="8" y="8" width="84" height="84" rx="8" fill="none" stroke="#7a8bb5" stroke-width="2"/>
+            <!-- 数字（示例） -->
+            <g font-family="Arial, Helvetica, sans-serif" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#2b3a67">
+                <text x="24" y="24">5</text>
+                <text x="34" y="24">3</text>
+                <text x="54" y="24">7</text>
+
+                <text x="24" y="34">6</text>
+                <text x="44" y="34">1</text>
+                <text x="64" y="34">9</text>
+
+                <text x="14" y="54">8</text>
+                <text x="24" y="54">4</text>
+                <text x="34" y="54">2</text>
+                <text x="44" y="54">7</text>
+
+                <text x="54" y="74">1</text>
+                <text x="64" y="74">3</text>
+                <text x="74" y="74">6</text>
+            </g>
+        </svg>
+        <h2>数独</h2>
+    </a>
+</div>
+</body>
+</html>

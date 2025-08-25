@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>五子棋游戏 - 人机对战</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../script/Position.js"></script>
+    <script src="../script/Board.js"></script>
+    <script src="../script/script.js"></script>
+</head>
+<body>
+<h1>五子棋游戏 - 人机对战</h1>
+<div id="status">黑棋回合</div>
+<div id="controls">
+    <div class="difficulty-option">
+        <label for="difficulty">AI难度:</label>
+        <select id="difficulty">
+            <option value="1">简单</option>
+            <option value="2" selected>中等</option>
+            <option value="3">困难</option>
+        </select>
+    </div>
+    <div class="player-option">
+        <label for="player-order">玩家执子:</label>
+        <select id="player-order">
+            <option value="black" selected>黑子(先手)</option>
+            <option value="white">白子(后手)</option>
+        </select>
+    </div>
+</div>
+
+<div id="buttons">
+    <button id="show-scores">分数</button>
+    <button id="restart">重置</button>
+    <button id="undo">悔棋</button>
+</div>
+<div id="game-container">
+    <canvas id="board" width="450" height="450"></canvas>
+</div>
+
+</body>
+</html>
